@@ -1,13 +1,14 @@
-/* Reset and body */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
   color: #e0e0e0;
   line-height: 1.6;
 }
@@ -19,78 +20,86 @@ header {
   align-items: center;
   background-color: #1a1a1a;
   padding: 1rem 2rem;
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
   z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.menu-icon {
+  font-size: 1.8rem;
+  color: #ccc;
+  cursor: pointer;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #03dac5;
   cursor: pointer;
 }
 
-.menu-icon {
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #ffffff;
-}
-
-/* Slide-down Menu with Fade */
+/* Menu (slide-down) */
 nav.menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 0;
-  background-color: rgba(18, 18, 18, 0.98);
+  background-color: #1a1a1a;
   overflow: hidden;
-  transition: height 0.5s ease, opacity 0.4s ease;
-  opacity: 0;
-  z-index: 999;
+  max-height: 0;
+  transition: max-height 0.5s ease;
 }
 
 nav.menu.show {
-  height: 100vh;
-  opacity: 1;
+  max-height: 500px; /* enough to show all items */
 }
 
 nav.menu ul {
   list-style: none;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 0 2rem;
 }
 
-nav.menu li {
-  margin: 1.2rem 0;
-}
-
-nav.menu a {
-  color: #ffffff;
-  font-size: 1.6rem;
+nav.menu li a {
   text-decoration: none;
+  color: #ccc;
+  padding: 1rem 0;
+  display: block;
+  font-weight: 500;
   transition: color 0.3s;
 }
 
-nav.menu a:hover {
-  color: #00ffe0;
+nav.menu li a:hover {
+  color: #03dac5;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
-  padding-top: 100px;
   text-align: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #1e1e1e, #111);
 }
 
-/* About Section */
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+/* About */
 .about {
-  padding: 2rem;
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #ffffff;
 }
 
 .about-content {
@@ -102,36 +111,64 @@ nav.menu a:hover {
 
 .about-content img {
   width: 180px;
-  border-radius: 12px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #03dac5;
+  flex-shrink: 0;
 }
 
-/* Projects Section */
+.about-content p {
+  flex: 1;
+  font-size: 1.1rem;
+  color: #ccc;
+  min-width: 250px;
+}
+
+/* Projects */
 .projects {
-  padding: 2rem;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.projects ul {
+  list-style: none;
+}
+
+.projects li {
+  background-color: #1f1f1f;
+  margin: 0.75rem 0;
+  padding: 1rem;
+  border-left: 4px solid #03dac5;
+  border-radius: 5px;
 }
 
 /* Footer */
 footer {
-  background-color: #1a1a1a;
-  color: #aaa;
   text-align: center;
-  padding: 1.5rem 1rem;
-  position: relative;
+  padding: 2rem 1rem;
+  background-color: #1a1a1a;
+  color: #999;
+  font-size: 0.9rem;
 }
 
-.linkedin-icon {
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
+footer .linkedin {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  color: #03dac5;
+  transition: color 0.3s;
+  text-decoration: none;
 }
 
-.linkedin-icon img {
-  width: 24px;
-  filter: brightness(100%);
-  transition: filter 0.3s ease;
-}
-
-.linkedin-icon img:hover {
-  filter: brightness(150%);
+footer .linkedin:hover {
+  color: #ffffff;
 }
