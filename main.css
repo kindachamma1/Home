@@ -147,21 +147,25 @@ nav.menu a:hover {
 }
 
 /* Footer */
+
+footer .linkedin:hover {
+  color: #ffffff;
+}
+
 footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem 1rem;
   background-color: #1a1a1a;
   color: #999;
   font-size: 0.9rem;
+  position: relative;
 }
 
 footer .linkedin {
   display: inline-block;
   margin-top: 1rem;
+  font-size: 1.8rem;
   color: #03dac5;
   transition: color 0.3s;
-}
-
-footer .linkedin:hover {
-  color: #ffffff;
+  text-decoration: none;
 }
