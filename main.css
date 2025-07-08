@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,6 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #121212;
   color: #f0f0f0;
-  line-height: 1.6;
   overflow-x: hidden;
 }
 
@@ -21,8 +20,8 @@ header {
   align-items: center;
   padding: 1rem 2rem;
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
   z-index: 1000;
 }
 
@@ -34,12 +33,12 @@ header {
 }
 
 .menu-icon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   cursor: pointer;
   color: #fff;
 }
 
-/* Sidebar Navigation */
+/* Sidebar Menu */
 .sidebar {
   position: fixed;
   top: 0;
@@ -47,41 +46,38 @@ header {
   width: 220px;
   height: 100%;
   background-color: #1f1f1f;
-  overflow-y: auto;
   transition: left 0.3s ease;
-  z-index: 999;
   padding-top: 80px;
+  z-index: 999;
 }
 
-.sidebar.active {
+.sidebar.show {
   left: 0;
 }
 
 .sidebar ul {
   list-style: none;
-  padding: 0;
 }
 
 .sidebar li {
-  padding: 1rem;
   border-bottom: 1px solid #333;
 }
 
 .sidebar a {
+  display: block;
+  padding: 1rem;
   color: #fff;
   text-decoration: none;
-  font-size: 1rem;
-  display: block;
-  transition: background 0.3s;
+  transition: background 0.2s;
 }
 
 .sidebar a:hover {
   background-color: #333;
 }
 
-/* Main Content */
+/* Main */
 main {
-  padding: 7rem 2rem 2rem;
+  padding: 6rem 2rem 2rem;
 }
 
 .hero {
@@ -91,18 +87,13 @@ main {
 
 .hero h1 {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-/* About Section */
-.about {
-  margin-bottom: 2rem;
 }
 
 .about-content {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-top: 1rem;
   align-items: center;
 }
 
@@ -117,12 +108,8 @@ main {
 
 /* Projects */
 .projects ul {
-  list-style: none;
+  margin-top: 1rem;
   padding-left: 1rem;
-}
-
-.projects li {
-  margin-bottom: 0.5rem;
 }
 
 /* Footer */
@@ -130,14 +117,13 @@ footer {
   background-color: #1f1f1f;
   padding: 1rem;
   text-align: center;
-  position: relative;
 }
 
 footer .linkedin {
   color: #0a66c2;
   font-size: 1.5rem;
-  margin-top: 0.5rem;
   display: inline-block;
+  margin-top: 0.5rem;
 }
 
 footer .linkedin:hover {
