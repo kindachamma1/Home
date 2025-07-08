@@ -11,13 +11,13 @@ body {
   color: #e0e0e0;
   line-height: 1.6;
   scroll-behavior: smooth;
+
+  /* Fade-in on page load */
   opacity: 0;
-  animation: pageFadeIn 1.2s ease-in forwards;
-  animation-delay: 0.5s;
+  animation: fadeInPage 1s ease-in forwards;
 }
 
-/* Fade-in after intro delay */
-@keyframes pageFadeIn {
+@keyframes fadeInPage {
   to {
     opacity: 1;
   }
@@ -103,7 +103,7 @@ header {
   text-align: center;
   padding: 4rem 2rem;
   background: linear-gradient(to right, #1e1e1e, #111);
-  animation: fadeSlide 1.5s ease-in-out 0.8s forwards;
+  animation: fadeSlide 1.2s ease-in-out 0.4s forwards;
   opacity: 0;
 }
 
@@ -217,7 +217,7 @@ footer a:hover {
   color: #fff;
 }
 
-/* Ensure content is above sidebar by default */
+/* Ensure content is above sidebar */
 main,
 footer {
   position: relative;
