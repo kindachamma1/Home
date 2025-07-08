@@ -5,15 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KC Portfolio</title>
   <link rel="stylesheet" href="main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 </head>
 <body>
   <header>
-    <div class="menu-icon" onclick="toggleMenu()">⋮</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
     <div class="logo" onclick="goHome()">KC</div>
   </header>
 
-  <!-- Sidebar Menu -->
+  <!-- Sidebar Navigation -->
   <nav id="menu" class="sidebar">
     <ul>
       <li><a href="bachelor.html" onclick="closeMenu()">Bachelor</a></li>
@@ -25,7 +28,7 @@
     </ul>
   </nav>
 
-  <main>
+  <main onclick="closeMenu()">
     <section class="hero">
       <h1>Welcome to My Portfolio</h1>
       <p>Explore my academic journey, projects, and goals.</p>
@@ -53,30 +56,26 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 KC Portfolio. All rights reserved.
-      <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </p>
+    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
+    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
   </footer>
 
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("show");
-  }
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
 
-  function closeMenu() {
-    document.getElementById("menu").classList.remove("show");
-  }
+    function closeMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.remove("show");
+    }
 
-  function goHome() {
-    window.location.href = "index.html";
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-</script>
+    function goHome() {
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
