@@ -10,12 +10,12 @@
 <body>
   <header>
     <div class="logo" onclick="goHome()">KC</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="menu-icon" onclick="toggleMenu()">⋮</div>
   </header>
 
+  <!-- Sidebar Menu -->
   <nav id="menu" class="sidebar">
     <ul>
-      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
       <li><a href="bachelor.html" onclick="closeMenu()">Bachelor</a></li>
       <li><a href="masters.html" onclick="closeMenu()">Masters</a></li>
       <li><a href="projects.html" onclick="closeMenu()">Projects</a></li>
@@ -62,11 +62,11 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
-      menu.classList.toggle("active");
+      menu.classList.toggle("show");
     }
 
     function closeMenu() {
-      document.getElementById("menu").classList.remove("active");
+      document.getElementById("menu").classList.remove("show");
     }
 
     function goHome() {
