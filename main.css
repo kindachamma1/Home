@@ -1,4 +1,4 @@
-/* Reset some defaults */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,46 +7,134 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #121212;
+  color: #e0e0e0;
   line-height: 1.6;
-  padding: 0;
 }
 
+/* Header */
 header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #1f1f1f;
+  position: relative;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  font-size: 1.5rem;
+  color: #bbb;
+  user-select: none;
+}
+
+/* Menu (hidden by default) */
+.menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 3.5rem;
+  left: 1rem;
+  background-color: #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.menu a {
+  color: #eee;
+  text-decoration: none;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.menu a:hover {
+  color: #03dac5;
+}
+
+.menu.active {
+  display: flex;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+/* About */
+.about {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.about h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.about-content img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  object-fit: cover;
+  border: 2px solid #333;
+}
+
+.about-content p {
+  max-width: 600px;
   text-align: center;
 }
 
-header h1 {
-  margin-bottom: 10px;
-}
-
-nav a {
-  color: #fff;
-  margin: 0 15px;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-main {
-  padding: 20px;
-  max-width: 800px;
+/* Projects */
+.projects {
+  padding: 2rem 1rem;
+  max-width: 900px;
   margin: auto;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+.projects h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #ffffff;
+}
+
+.projects ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.projects li {
+  margin-bottom: 0.5rem;
+  background-color: #1f1f1f;
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+/* Footer */
 footer {
   text-align: center;
-  padding: 15px;
-  background-color: #333;
-  color: #fff;
-  margin-top: 30px;
+  padding: 1rem;
+  background-color: #1f1f1f;
+  font-size: 0.9rem;
+  color: #aaa;
 }
-
