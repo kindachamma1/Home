@@ -111,12 +111,12 @@ header {
   animation-delay: 0.4s;
 }
 
-@keyframes fadeSlide {
+/* @keyframes fadeSlide {
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
 .hero h1 {
   font-size: 3rem;
