@@ -1,4 +1,4 @@
-/* Reset and Base Styles */
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,19 +6,21 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #121212;
   color: #f0f0f0;
-  overflow-x: hidden;
+  line-height: 1.6;
+  padding-top: 60px; /* space for fixed header */
 }
 
 /* Header */
 header {
-  background-color: #1f1f1f;
+  background-color: #1e1e1e;
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 1.5rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -26,7 +28,7 @@ header {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   cursor: pointer;
   color: #fff;
@@ -42,12 +44,12 @@ header {
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px;
+  left: -220px;
   width: 220px;
   height: 100%;
-  background-color: #1f1f1f;
+  background-color: #2a2a2a;
+  padding-top: 60px;
   transition: left 0.3s ease;
-  padding-top: 80px;
   z-index: 999;
 }
 
@@ -57,75 +59,89 @@ header {
 
 .sidebar ul {
   list-style: none;
+  padding: 0;
 }
 
 .sidebar li {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #444;
 }
 
 .sidebar a {
   display: block;
+  color: #f0f0f0;
   padding: 1rem;
-  color: #fff;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: background 0.2s ease;
 }
 
 .sidebar a:hover {
-  background-color: #333;
+  background-color: #444;
 }
 
-/* Main */
+/* Main content */
 main {
-  padding: 6rem 2rem 2rem;
+  padding: 2rem;
 }
 
 .hero {
   text-align: center;
-  margin-bottom: 3rem;
+  padding: 2rem 0;
 }
 
 .hero h1 {
   font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about {
+  margin-top: 3rem;
+}
+
+.about h2,
+.projects h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .about-content {
   display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-  align-items: center;
 }
 
 .about-content img {
-  width: 180px;
-  border-radius: 10px;
+  max-width: 180px;
+  border-radius: 8px;
 }
 
-.about-content p {
-  flex: 1;
-}
-
-/* Projects */
 .projects ul {
-  margin-top: 1rem;
+  list-style: none;
   padding-left: 1rem;
+}
+
+.projects li {
+  margin-bottom: 0.5rem;
 }
 
 /* Footer */
 footer {
-  background-color: #1f1f1f;
-  padding: 1rem;
+  background-color: #1e1e1e;
+  color: #ccc;
   text-align: center;
+  padding: 1.2rem;
+  margin-top: 4rem;
+  position: relative;
 }
 
 footer .linkedin {
-  color: #0a66c2;
-  font-size: 1.5rem;
   display: inline-block;
-  margin-top: 0.5rem;
+  margin-left: 10px;
+  color: #0a66c2;
+  font-size: 1.4rem;
+  vertical-align: middle;
 }
 
 footer .linkedin:hover {
-  color: #1e90ff;
+  color: #1a8cd8;
 }
