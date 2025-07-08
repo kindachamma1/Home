@@ -10,6 +10,7 @@ body {
   background-color: #121212;
   color: #f0f0f0;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -20,15 +21,15 @@ header {
   align-items: center;
   padding: 1rem 2rem;
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
   z-index: 1000;
 }
 
 .logo {
   font-size: 1.5rem;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
   color: #fff;
 }
 
@@ -38,68 +39,75 @@ header {
   color: #fff;
 }
 
-/* Menu */
-.menu {
+/* Sidebar Navigation */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 220px;
+  height: 100%;
   background-color: #1f1f1f;
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.3s ease;
-  position: absolute;
-  top: 60px;
-  width: 100%;
+  overflow-y: auto;
+  transition: left 0.3s ease;
   z-index: 999;
+  padding-top: 80px;
 }
 
-.menu.show {
-  max-height: 400px;
+.sidebar.active {
+  left: 0;
 }
 
-.menu ul {
+.sidebar ul {
   list-style: none;
-  text-align: center;
-  padding: 1rem 0;
+  padding: 0;
 }
 
-.menu li {
-  margin: 0.75rem 0;
+.sidebar li {
+  padding: 1rem;
+  border-bottom: 1px solid #333;
 }
 
-.menu a {
+.sidebar a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.1rem;
-  transition: color 0.2s;
+  font-size: 1rem;
+  display: block;
+  transition: background 0.3s;
 }
 
-.menu a:hover {
-  color: #1e90ff;
+.sidebar a:hover {
+  background-color: #333;
 }
 
-/* Hero Section */
+/* Main Content */
+main {
+  padding: 7rem 2rem 2rem;
+}
+
 .hero {
-  padding: 8rem 2rem 2rem;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .hero h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* About Section */
 .about {
-  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .about-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
 }
 
 .about-content img {
-  max-width: 200px;
+  width: 180px;
   border-radius: 10px;
 }
 
@@ -107,11 +115,7 @@ header {
   flex: 1;
 }
 
-/* Projects Section */
-.projects {
-  padding: 2rem;
-}
-
+/* Projects */
 .projects ul {
   list-style: none;
   padding-left: 1rem;
@@ -124,21 +128,18 @@ header {
 /* Footer */
 footer {
   background-color: #1f1f1f;
-  text-align: center;
   padding: 1rem;
+  text-align: center;
   position: relative;
 }
 
-footer p {
-  margin-bottom: 0.5rem;
-}
-
-.linkedin {
+footer .linkedin {
   color: #0a66c2;
   font-size: 1.5rem;
-  text-decoration: none;
+  margin-top: 0.5rem;
+  display: inline-block;
 }
 
-.linkedin:hover {
-  color: #3399ff;
+footer .linkedin:hover {
+  color: #1e90ff;
 }
