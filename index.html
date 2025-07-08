@@ -60,23 +60,23 @@
     </p>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+  }
 
-    function closeMenu() {
-      document.getElementById("menu").classList.remove("show");
-    }
+  function closeMenu() {
+    document.getElementById("menu").classList.remove("show");
+  }
 
-    function goHome() {
-      window.location.href = "index.html";
-    }
+  function goHome() {
+    window.location.href = "index.html";
+  }
 
-    document.addEventListener('keydown', (e) => {
-      if(e.key === "Escape") closeMenu();
-    });
-  </script>
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+</script>
 </body>
 </html>
