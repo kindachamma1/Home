@@ -1,14 +1,13 @@
-/* Reset */
+/* Reset and body */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #111;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
   color: #e0e0e0;
   line-height: 1.6;
 }
@@ -20,86 +19,78 @@ header {
   align-items: center;
   background-color: #1a1a1a;
   padding: 1rem 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
-}
-
-.menu-icon {
-  font-size: 1.8rem;
-  color: #ccc;
-  cursor: pointer;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #03dac5;
+  color: #ffffff;
   cursor: pointer;
 }
 
-/* Menu (slide-down) */
+.menu-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+/* Slide-down Menu with Fade */
 nav.menu {
-  background-color: #1a1a1a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0;
+  background-color: rgba(18, 18, 18, 0.98);
   overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.5s ease;
+  transition: height 0.5s ease, opacity 0.4s ease;
+  opacity: 0;
+  z-index: 999;
 }
 
 nav.menu.show {
-  max-height: 500px; /* enough to show all items */
+  height: 100vh;
+  opacity: 1;
 }
 
 nav.menu ul {
   list-style: none;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
-nav.menu li a {
+nav.menu li {
+  margin: 1.2rem 0;
+}
+
+nav.menu a {
+  color: #ffffff;
+  font-size: 1.6rem;
   text-decoration: none;
-  color: #ccc;
-  padding: 1rem 0;
-  display: block;
-  font-weight: 500;
   transition: color 0.3s;
 }
 
-nav.menu li a:hover {
-  color: #03dac5;
+nav.menu a:hover {
+  color: #00ffe0;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
+  padding-top: 100px;
   text-align: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(to right, #1e1e1e, #111);
+  padding: 2rem;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  color: #bbb;
-}
-
-/* About */
+/* About Section */
 .about {
-  padding: 3rem 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.about h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  color: #ffffff;
+  padding: 2rem;
 }
 
 .about-content {
@@ -111,64 +102,36 @@ nav.menu li a:hover {
 
 .about-content img {
   width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #03dac5;
-  flex-shrink: 0;
+  border-radius: 12px;
 }
 
-.about-content p {
-  flex: 1;
-  font-size: 1.1rem;
-  color: #ccc;
-  min-width: 250px;
-}
-
-/* Projects */
+/* Projects Section */
 .projects {
-  padding: 3rem 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-.projects h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #ffffff;
-}
-
-.projects ul {
-  list-style: none;
-}
-
-.projects li {
-  background-color: #1f1f1f;
-  margin: 0.75rem 0;
-  padding: 1rem;
-  border-left: 4px solid #03dac5;
-  border-radius: 5px;
+  padding: 2rem;
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 2rem 1rem;
   background-color: #1a1a1a;
-  color: #999;
-  font-size: 0.9rem;
+  color: #aaa;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  position: relative;
 }
 
-footer .linkedin {
-  display: inline-block;
-  margin-top: 1rem;
-  font-size: 1.8rem;
-  color: #03dac5;
-  transition: color 0.3s;
-  text-decoration: none;
+.linkedin-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-footer .linkedin:hover {
-  color: #ffffff;
+.linkedin-icon img {
+  width: 24px;
+  filter: brightness(100%);
+  transition: filter 0.3s ease;
+}
+
+.linkedin-icon img:hover {
+  filter: brightness(150%);
 }
