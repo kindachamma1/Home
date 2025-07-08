@@ -118,9 +118,11 @@ nav.menu a:hover {
 
 .about-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .about-content img {
@@ -133,7 +135,6 @@ nav.menu a:hover {
 
 .about-content p {
   max-width: 600px;
-  text-align: center;
   font-size: 1.1rem;
   color: #ccc;
 }
