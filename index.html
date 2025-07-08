@@ -13,7 +13,7 @@
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
   </header>
 
-  <nav id="menu" class="menu">
+  <nav id="menu" class="sidebar">
     <ul>
       <li><a href="index.html" onclick="closeMenu()">Home</a></li>
       <li><a href="bachelor.html" onclick="closeMenu()">Bachelor</a></li>
@@ -62,11 +62,11 @@
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
+      menu.classList.toggle("active");
     }
 
     function closeMenu() {
-      document.getElementById("menu").classList.remove("show");
+      document.getElementById("menu").classList.remove("active");
     }
 
     function goHome() {
