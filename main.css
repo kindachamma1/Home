@@ -11,7 +11,6 @@ body {
   color: #e0e0e0;
   line-height: 1.6;
   scroll-behavior: smooth;
-  min-height: 100vh;
 }
 
 /* Header */
@@ -23,7 +22,7 @@ header {
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 1100;
+  z-index: 10;
   box-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
@@ -33,7 +32,6 @@ header {
   color: #03dac5;
   cursor: pointer;
   transition: color 0.3s;
-  user-select: none;
 }
 
 .logo:hover {
@@ -41,37 +39,33 @@ header {
 }
 
 .menu-icon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #ccc;
   cursor: pointer;
-  user-select: none;
 }
 
 /* Sidebar styles */
-/* Sidebar styles with smooth slide animation */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -260px; /* Hidden by default */
+  left: -260px;
   width: 250px;
   height: 100%;
   background-color: #1a1a1a;
   padding-top: 70px;
-  transition: transform 0.35s ease-in-out;
+  transition: transform 0.3s ease;
   transform: translateX(-100%);
-  overflow-y: auto;
   z-index: 1000;
   box-shadow: 2px 0 8px rgba(0,0,0,0.7);
 }
 
 .sidebar.show {
-  transform: translateX(0);
+  transform: translateX(260px);
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 .sidebar li {
@@ -83,12 +77,11 @@ header {
   padding: 1rem 1.5rem;
   color: #ccc;
   text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .sidebar a:hover {
-  background-color: #292929;
+  background-color: #333;
   color: #03dac5;
 }
 
@@ -112,7 +105,7 @@ header {
 /* About */
 .about {
   padding: 3rem 2rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -125,6 +118,7 @@ header {
 
 .about-content {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
@@ -137,14 +131,13 @@ header {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #03dac5;
-  flex-shrink: 0;
 }
 
 .about-content p {
-  color: #ccc;
-  font-size: 1.1rem;
   max-width: 600px;
   text-align: left;
+  font-size: 1.1rem;
+  color: #ccc;
 }
 
 /* Projects */
@@ -164,8 +157,6 @@ header {
 .projects ul {
   list-style: none;
   padding-left: 0;
-  max-width: 700px;
-  margin: auto;
 }
 
 .projects li {
@@ -186,15 +177,14 @@ footer {
   margin-top: 3rem;
 }
 
-footer a.linkedin {
-  color: #0a66c2;
+footer .linkedin {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #ccc;
   font-size: 1.5rem;
-  margin-left: 0.5rem;
-  vertical-align: middle;
-  transition: color 0.3s;
 }
 
-footer a.linkedin:hover {
+footer .linkedin:hover {
   color: #03dac5;
 }
 
@@ -206,6 +196,6 @@ footer a.linkedin:hover {
   }
 
   .about-content p {
-    max-width: 100%;
+    text-align: center;
   }
 }
