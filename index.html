@@ -53,10 +53,11 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
-    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
-      <i class="fab fa-linkedin"></i>
-    </a>
+    <p>&copy; 2025 KC Portfolio. All rights reserved.
+      <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </p>
   </footer>
 
   <script>
@@ -72,6 +73,10 @@
     function goHome() {
       window.location.href = "index.html";
     }
+
+    document.addEventListener('keydown', (e) => {
+      if(e.key === "Escape") closeMenu();
+    });
   </script>
 </body>
 </html>
