@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="toggleMenu()">
+      <span class="dot">●</span>
+      <span class="dot">●</span>
+      <span class="dot">●</span>
+    </div>
+    <div class="menu" id="menu">
+      <a href="#">Home</a>
+      <a href="#">Bachelor</a>
+      <a href="#">Masters</a>
+      <a href="#">Projects</a>
+      <a href="#">Job Search</a>
+      <a href="#">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to My Portfolio</h1>
+    </section>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="your-photo.jpg" alt="My Photo" />
+        <p>
+          Hello! I'm [Your Name], a passionate learner and developer. This website is where I share my academic path, projects, and professional journey.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects">
+      <h2>Current Projects</h2>
+      <ul>
+        <li>🔧 Building a GitHub-hosted website</li>
+        <li>📊 Working on a data visualization project</li>
+        <li>🤖 Learning AI and automation tools</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
+
