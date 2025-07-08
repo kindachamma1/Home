@@ -2,21 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KC Portfolio</title>
   <link rel="stylesheet" href="main.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 </head>
 <body>
-
-  <!-- HEADER -->
   <header>
-    <div class="logo" onclick="goHome()">KC</div>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo" onclick="goHome()">KC</div>
   </header>
 
-  <!-- SLIDE-DOWN MENU -->
+  <!-- Slide-down menu -->
   <nav id="menu" class="menu">
     <ul>
+      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
       <li><a href="bachelor.html" onclick="closeMenu()">Bachelor</a></li>
       <li><a href="masters.html" onclick="closeMenu()">Masters</a></li>
       <li><a href="projects.html" onclick="closeMenu()">Projects</a></li>
@@ -26,7 +29,6 @@
     </ul>
   </nav>
 
-  <!-- MAIN CONTENT -->
   <main>
     <section class="hero">
       <h1>Welcome to My Portfolio</h1>
@@ -39,6 +41,7 @@
         <img src="Photo.png" alt="My Photo" />
         <p>
           Hey! I am Kinda Chamma, currently enrolled in the prestigious Erasmus Mundus master's program, specializing in advanced machine learning and optimization for sustainable systems. This semester, I’m studying at the Université de Technologie de Compiègne (UTC).
+          This space highlights my education, experience, and ongoing development.
         </p>
       </div>
     </section>
@@ -53,15 +56,13 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
-    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin-icon">
-      <img src="linkedin.svg" alt="LinkedIn" />
+    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
     </a>
   </footer>
 
-  <!-- SCRIPT -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
@@ -69,8 +70,7 @@
     }
 
     function closeMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.remove("show");
+      document.getElementById("menu").classList.remove("show");
     }
 
     function goHome() {
