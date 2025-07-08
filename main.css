@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Body & base styles */
+/* Body */
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #111;
@@ -22,7 +22,7 @@ header {
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
   box-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
@@ -39,34 +39,39 @@ header {
   cursor: pointer;
 }
 
-/* Nav menu (hidden by default) */
+/* Menu (slide-down) */
 nav.menu {
-  max-height: 0;
-  overflow: hidden;
   background-color: #1a1a1a;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+}
+
+nav.menu.show {
+  max-height: 500px; /* enough to show all items */
+}
+
+nav.menu ul {
+  list-style: none;
   display: flex;
   flex-direction: column;
-  transition: max-height 0.4s ease;
-  padding-left: 2rem;
+  padding: 0 2rem;
 }
 
-nav.menu.open {
-  max-height: 500px;
-}
-
-nav.menu a {
-  padding: 0.75rem 0;
+nav.menu li a {
   text-decoration: none;
   color: #ccc;
+  padding: 1rem 0;
+  display: block;
   font-weight: 500;
   transition: color 0.3s;
 }
 
-nav.menu a:hover {
+nav.menu li a:hover {
   color: #03dac5;
 }
 
-/* Hero section */
+/* Hero */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
@@ -83,7 +88,7 @@ nav.menu a:hover {
   color: #bbb;
 }
 
-/* About section */
+/* About */
 .about {
   padding: 3rem 2rem;
   max-width: 1000px;
@@ -147,18 +152,12 @@ nav.menu a:hover {
 }
 
 /* Footer */
-
-footer .linkedin:hover {
-  color: #ffffff;
-}
-
 footer {
   text-align: center;
   padding: 2rem 1rem;
   background-color: #1a1a1a;
   color: #999;
   font-size: 0.9rem;
-  position: relative;
 }
 
 footer .linkedin {
@@ -168,4 +167,8 @@ footer .linkedin {
   color: #03dac5;
   transition: color 0.3s;
   text-decoration: none;
+}
+
+footer .linkedin:hover {
+  color: #ffffff;
 }
