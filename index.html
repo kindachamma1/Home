@@ -10,17 +10,19 @@
 </head>
 <body>
   <header>
+    <div class="left-menu">
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <nav id="menu" class="menu hidden">
+        <a href="index.html">Home</a>
+        <a href="bachelor.html">Bachelor</a>
+        <a href="masters.html">Masters</a>
+        <a href="projects.html">Projects</a>
+        <a href="jobsearch.html">Job Search</a>
+        <a href="latest-article.html">Latest Article</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
     <div class="logo" onclick="goHome()">KC</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <nav id="menu" class="menu hidden">
-      <a href="#">Home</a>
-      <a href="#">Bachelor</a>
-      <a href="#">Masters</a>
-      <a href="#">Projects</a>
-      <a href="#">Job Search</a>
-      <a href="#">Latest Article</a>
-      <a href="#">Contact</a>
-    </nav>
   </header>
 
   <main>
@@ -52,7 +54,7 @@
 
   <footer>
     <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
-    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn Profile">
+    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn Profile" rel="noopener noreferrer">
       <i class="fab fa-linkedin fa-2x"></i>
     </a>
   </footer>
