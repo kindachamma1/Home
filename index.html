@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KC Portfolio</title>
   <link rel="stylesheet" href="main.css" />
-  <!-- Font Awesome for LinkedIn icon -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 </head>
 <body>
   <header>
@@ -14,14 +16,17 @@
     <div class="logo" onclick="goHome()">KC</div>
   </header>
 
-  <nav id="menu" class="menu hidden">
-    <a href="index.html" onclick="closeMenu()">Home</a>
-    <a href="bachelor.html" onclick="closeMenu()">Bachelor</a>
-    <a href="masters.html" onclick="closeMenu()">Masters</a>
-    <a href="projects.html" onclick="closeMenu()">Projects</a>
-    <a href="jobsearch.html" onclick="closeMenu()">Job Search</a>
-    <a href="latest-article.html" onclick="closeMenu()">Latest Article</a>
-    <a href="contact.html" onclick="closeMenu()">Contact</a>
+  <!-- Slide-down menu -->
+  <nav id="menu" class="menu">
+    <ul>
+      <li><a href="index.html" onclick="closeMenu()">Home</a></li>
+      <li><a href="bachelor.html" onclick="closeMenu()">Bachelor</a></li>
+      <li><a href="masters.html" onclick="closeMenu()">Masters</a></li>
+      <li><a href="projects.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="jobsearch.html" onclick="closeMenu()">Job Search</a></li>
+      <li><a href="latest-article.html" onclick="closeMenu()">Latest Article</a></li>
+      <li><a href="contact.html" onclick="closeMenu()">Contact</a></li>
+    </ul>
   </nav>
 
   <main>
@@ -60,11 +65,12 @@
 
   <script>
     function toggleMenu() {
-      document.getElementById("menu").classList.toggle("open");
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
     }
 
     function closeMenu() {
-      document.getElementById("menu").classList.remove("open");
+      document.getElementById("menu").classList.remove("show");
     }
 
     function goHome() {
