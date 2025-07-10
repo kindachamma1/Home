@@ -1,1 +1,72 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | KC Portfolio</title>
+
+  <link rel="stylesheet" href="/kc-portfolio/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="fade">
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo" onclick="goHome()">KC</div>
+  </header>
+
+  <nav id="menu" class="sidebar">
+    <ul>
+      <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
+      <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
+      <li><a href="/kc-portfolio/ProjectPage/projects.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="/kc-portfolio/JobPage/jobsearch.html" onclick="closeMenu()">Job Search</a></li>
+      <li><a href="/kc-portfolio/LatestArticlePage/article.html" onclick="closeMenu()">Latest Article</a></li>
+      <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main onclick="closeMenu()">
+    <section class="hero">
+      <h1>Let's Connect</h1>
+      <p>Whether it's a small talk, a collaborative project, or just to say hi — I'm always happy to chat.</p>
+    </section>
+
+    <section class="about">
+      <div class="about-content" style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <p>You can reach me directly at:</p>
+        <p><strong>Email:</strong> <a href="kinda.chamma@outlook.com">kinda.chamma@outlook.com</a></p>
+
+        <p>Or connect with me on LinkedIn:</p>
+        <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
+    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.remove("show");
+    }
+
+    function goHome() {
+      window.location.href = "/kc-portfolio/index.html";
+    }
+  </script>
+</body>
+</html>
