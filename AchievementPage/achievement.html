@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recent Achievements | KC Portfolio</title>
+  
+  <link rel="stylesheet" href="/kc-portfolio/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="fade">
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo" onclick="goHome()">KC</div>
+  </header>
+
+  <nav id="menu" class="sidebar">
+    <ul>
+      <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
+      <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
+      <li><a href="/kc-portfolio/ProjectPage/project.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="/kc-portfolio/JobPage/job.html" onclick="closeMenu()">Job Search</a></li>
+      <li><a href="/kc-portfolio/ArticlePage/article.html" onclick="closeMenu()">Latest Highlights</a></li>
+      <li><a href="/kc-portfolio/AchievementPage/achievement.html" onclick="closeMenu()">Recent Achievements</a></li>
+      <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <main onclick="closeMenu()">
+    <section class="hero">
+      <h1>Recent Achievements</h1>
+      <p>Highlights of my latest accomplishments and projects.</p>
+    </section>
+
+    <section class="about">
+      <h2>1) Erasmus Mundus Program Selection</h2>
+      <p>
+        I was selected for the <strong>Erasmus Mundus program</strong>, ranking among the top 3% of students. This achievement granted me the <strong>EMSSE Top Applicant Scholarship</strong> with full tuition fee waiver.
+      </p>
+    </section>
+    
+
+    <section class="about">
+      <h2>2) French Robotics Championship 2023–2024</h2>
+      <div class="about-content" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+        <div style="flex: 0 0 250px; display: flex; justify-content: center;">
+          <img src="/kc-portfolio/ProjectPage/robotics.jpg" alt="French Robotics Championship" style="width: 220px; height: 220px; object-fit: cover; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.2);" />
+        </div>
+        <div style="flex: 1; min-width: 280px;">
+          <p>
+            As part of the <em>Robot Project</em>, I was a member of an 8-person team competing in the <strong>Coupe de France de Robotique 2024</strong>. We built a main robot equipped with grippers to navigate the playground, carry plants, and deposit them precisely according to competition rules.
+          </p>
+          <p>
+            We also created two smaller robots called PAMIs, which were launched after the main robot's run to pollinate plants in designated zones.
+          </p>
+          <p>
+            My tasks included developing code for gripper movements, using the xBee module to communicate with PAMIs, and programming their movements and strategies. We worked with Arduino Uno, Mega, Nano boards, the xBee module, and an OrangePi board.
+          </p>
+          <p>
+            Obstacle avoidance was implemented using Ultrasonic Sensor HC-SR04 and TOF sensors.
+          </p>
+          <p><strong>Skills:</strong> Project Management · Time Management · Python · Robot Programming</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>3) Bachelor Degree Graduation</h2>
+      <p>
+        I graduated as the <strong>top student</strong> in my bachelor’s degree.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
+    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.remove("show");
+    }
+
+    function goHome() {
+      window.location.href = "/kc-portfolio/index.html";
+    }
+  </script>
+</body>
+</html>
 
