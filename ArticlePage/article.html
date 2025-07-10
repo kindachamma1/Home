@@ -1,1 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Latest Highlights | KC Portfolio</title>
+
+  <link rel="stylesheet" href="/kc-portfolio/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="fade">
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo" onclick="goHome()">KC</div>
+  </header>
+
+  <!-- Sidebar Navigation -->
+  <nav id="menu" class="sidebar">
+    <ul>
+      <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
+      <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
+      <li><a href="/kc-portfolio/ProjectPage/projects.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="/kc-portfolio/JobPage/jobsearch.html" onclick="closeMenu()">Job Search</a></li>
+      <li><a href="/kc-portfolio/LatestArticlePage/article.html" onclick="closeMenu()">Latest Highlights</a></li>
+      <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main onclick="closeMenu()">
+    <section class="hero">
+      <h1>Latest Highlights</h1>
+      <p>Conferences, workshops, summer schools, and other academic experiences worth sharing.</p>
+    </section>
+
+    <section class="about">
+      <h2>Featured Experiences</h2>
+      <p style="margin-bottom: 30px;">Here are some highlights from recent academic and professional events I’ve participated in.</p>
+
+      <!-- Summer School in Vlora -->
+      <div class="article" style="margin-bottom: 40px;">
+        <h3>🌞 EMSSE Summer School – Vlora, Albania</h3>
+        <p>
+          During the first year of my master’s program, I had the opportunity to attend the very first <strong>EMSSE Summer School</strong> in beautiful Vlora, Albania. The sessions were quite different from our usual lectures, but equally valuable — offering a more hands-on and communication-centered approach to learning.
+        </p>
+        <p>
+          One highlight was the lecture by <strong>Prof. Valentina Tirloni</strong> on <em>“Communication Tools”</em>. It made me realize how many practices we tend to take for granted when presenting ideas — and how many of those aren't necessarily the most effective. Her insights helped reshape how I now approach presentations and audience engagement.
+        </p>
+        <p>
+          We also explored technical themes such as <strong>solar energy</strong>, and concluded the school by delivering presentations on topics of our choice, where we applied the communication strategies we had just learned. 
+        </p>
+        <p>
+          Beyond academics, the event was meaningful on a personal level — reuniting with classmates from different paths of the EMSSE program and sharing diverse cultural and academic perspectives made it a memorable end to the year.
+        </p>
+      </div>
+
+      <!-- IEEE Conference in Tirana -->
+      <div class="article">
+        <h3>📡 IEEE SoSE 2025 – Systems Engineering for Sustainable Development</h3>
+        <p>
+          I had the privilege of attending the <strong>IEEE 20th Annual System of Systems Engineering Conference (SoSE)</strong> in <strong>Tirana</strong>, where the main theme was <em>Systems Engineering for Sustainable Development</em>. It was an intellectually stimulating experience that opened my eyes to several fascinating frontiers.
+        </p>
+
+        <ul>
+          <li>
+            <strong>🚗 Systems Engineering & Autonomous Vehicles</strong><br>
+            <em>Dr. Ibanez-Guzman (Renault SAS)</em> presented groundbreaking ideas about the complexity of autonomous systems — from navigation to pedestrian behavior prediction and localized testing. A powerful insight: <em>navigation systems must adapt drastically between cities like Berlin and Hanoi.</em>
+          </li>
+
+          <li>
+            <strong>💻 Mainframe in the AI Age</strong><br>
+            <em>Sir Fabio Riva (IBM)</em> discussed how mainframes still power over 60% of global financial transactions. One astonishing fact: IBM mainframes can withstand an <strong>8.3 magnitude earthquake</strong>! This was followed by <em>Francesca Ferretti</em>'s talk, who compared IBM Z’s power to Instagram’s — <strong>over 1.1 million secure transactions per second vs. 1,200 posts</strong>. It sparked my interest in <strong>quantum-safe mainframes</strong>.
+          </li>
+
+          <li>
+            <strong>🌱 Biomimicry: Nature-Inspired Innovation</strong><br>
+            <em>Prof. Mauro Gallo</em> delivered a talk that deeply resonated with me. He explored <em>biomimicry</em> — drawing from nature to build sustainable technologies. The highlight was the <strong>Flappy Project</strong>, which uses insect-like robots to assist in agriculture. I realized I had encountered such concepts before but never had the language to describe them.
+          </li>
+        </ul>
+
+        <p>
+          This conference left a lasting impression and introduced me to new paths I’m now excited to explore — especially in the intersection between sustainability and advanced system design.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
+    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.remove("show");
+    }
+
+    function goHome() {
+      window.location.href = "/kc-portfolio/index.html";
+    }
+  </script>
+</body>
+</html>
 
