@@ -12,9 +12,9 @@
 <body class="fade">
   <!-- INTRO OVERLAY -->
   <div id="intro" class="intro-overlay">
-    <canvas id="backgroundCanvas"></canvas>
+    <canvas id="networkCanvas"></canvas>
     <div class="intro-content">
-      <div class="quote">“Data is the new oil” ~ Clive Himby</div>
+      <div class="quote">“The world is a book, and those who do not travel read only one page.”</div>
       <p class="subtext">
         Welcome! I’m <strong>Kinda Chamma</strong>, an EMSSE master’s student exploring AI and sustainability across borders.
       </p>
@@ -78,7 +78,7 @@
     </a>
   </footer>
 
-  <!-- SCRIPTS -->
+  <!-- JS -->
   <script>
     // Sidebar toggle
     function toggleMenu() {
@@ -91,7 +91,7 @@
       menu.classList.remove("show");
     }
 
-    // Hide intro screen on button click
+    // Hide intro on button click
     document.addEventListener('DOMContentLoaded', () => {
       const intro = document.getElementById('intro');
       const button = document.getElementById('enterButton');
@@ -103,10 +103,10 @@
       });
     });
 
-    // Simple background animation for canvas
-    const canvas = document.getElementById("backgroundCanvas");
+    // Neural Network Animation
+    const canvas = document.getElementById("networkCanvas");
     const ctx = canvas.getContext("2d");
-    let particles = [];
+    let nodes = [];
 
     function resizeCanvas() {
       canvas.width = window.innerWidth;
@@ -116,37 +116,54 @@
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
-    for (let i = 0; i < 60; i++) {
-      particles.push({
+    const nodeCount = 80;
+    for (let i = 0; i < nodeCount; i++) {
+      nodes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 0.6,
-        dy: (Math.random() - 0.5) * 0.6
+        vx: (Math.random() - 0.5) * 1,
+        vy: (Math.random() - 0.5) * 1
       });
     }
 
-    function animateParticles() {
+    function animateNetwork() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let p of particles) {
+
+      for (let i = 0; i < nodeCount; i++) {
+        const n1 = nodes[i];
+        n1.x += n1.vx;
+        n1.y += n1.vy;
+
+        if (n1.x < 0 || n1.x > canvas.width) n1.vx *= -1;
+        if (n1.y < 0 || n1.y > canvas.height) n1.vy *= -1;
+
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.arc(n1.x, n1.y, 2.5, 0, Math.PI * 2);
         ctx.fillStyle = "#03dac5";
         ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
 
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+        for (let j = i + 1; j < nodeCount; j++) {
+          const n2 = nodes[j];
+          const dx = n1.x - n2.x;
+          const dy = n1.y - n2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(n1.x, n1.y);
+            ctx.lineTo(n2.x, n2.y);
+            ctx.strokeStyle = "rgba(3, 218, 197," + (1 - dist / 120) + ")";
+            ctx.stroke();
+          }
+        }
       }
-      requestAnimationFrame(animateParticles);
+      requestAnimationFrame(animateNetwork);
     }
 
-    animateParticles();
+    animateNetwork();
   </script>
 
+  <!-- STYLES -->
   <style>
-    /* INTRO OVERLAY */
     .intro-overlay {
       position: fixed;
       z-index: 2000;
@@ -164,7 +181,7 @@
       transition: opacity 0.8s ease;
     }
 
-    #backgroundCanvas {
+    #networkCanvas {
       position: absolute;
       width: 100%;
       height: 100%;
