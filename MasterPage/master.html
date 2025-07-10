@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Master's Journey | KC Portfolio</title>
+  
+  <!-- ✅ Correct path for CSS -->
+  <link rel="stylesheet" href="/kc-portfolio/main.css" />
 
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="fade">
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <!-- ✅ Go home to GitHub Pages root -->
+    <div class="logo" onclick="goHome()">KC</div>
+  </header>
+
+  <!-- ✅ Sidebar Navigation -->
+  <nav id="menu" class="sidebar">
+    <ul>
+      <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
+      <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
+      <li><a href="/kc-portfolio/ProjectPage/projects.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="/kc-portfolio/JobPage/jobsearch.html" onclick="closeMenu()">Job Search</a></li>
+      <li><a href="/kc-portfolio/LatestArticlePage/latest-article.html" onclick="closeMenu()">Latest Article</a></li>
+      <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+
+ <main onclick="closeMenu()">
+  <section class="hero">
+    <h1>My Masters Journey</h1>
+    <p>
+      A tale of learning across 3 countries, following the Erasmus Mundus Joint Master Program <strong>EMSSE</strong>, 
+      specializing in <strong>Advanced Machine Learning and Optimization for Sustainable Systems</strong>.
+    </p>
+  </section>
+
+  <!-- ✅ Part 1: University of Genoa -->
+  <section class="about">
+    <h2>Part 1: University of Genoa 🇮🇹</h2>
+    <div class="about-content" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+      <div style="flex: 0 0 250px; display: flex; justify-content: center;">
+        <img src="/kc-portfolio/MasterPage/genoa.jpg" alt="University of Genoa"
+             style="width: 220px; height: 220px; object-fit: cover; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.2);" />
+      </div>
+      <div style="flex: 1; min-width: 280px;">
+        <p>
+          I started my Master's journey at the <strong>University of Genoa</strong>, where I had the chance to learn 
+          from incredibly inspiring professors. The courses were intellectually stimulating, with some topics completely new to me.
+        </p>
+        <p>
+          I built a strong foundation in areas such as:
+        </p>
+        <ul>
+          <li><strong>System Control and Identification</strong></li>
+          <li><strong>Machine Learning & Data Analysis</strong></li>
+          <li><strong>Sustainable Systems Modelling</strong></li>
+          <li><strong>Computer Security</strong></li>
+        </ul>
+        <p>
+          These topics helped me develop a rigorous and interdisciplinary approach to solving complex sustainability-related problems.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Part 2: Polytechnic University of Tirana -->
+  <section class="about">
+    <h2>Part 2: Polytechnic University of Tirana 🇦🇱</h2>
+    <div class="about-content" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+      <div style="flex: 0 0 250px; display: flex; justify-content: center;">
+        <img src="/kc-portfolio/MasterPage/tirana.jpg" alt="Polytechnic University of Tirana"
+             style="width: 220px; height: 220px; object-fit: cover; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.2);" />
+      </div>
+      <div style="flex: 1; min-width: 280px;">
+        <p>
+          I began this semester without specific expectations, but Albania quickly won me over with its rich culture 
+          and warm hospitality.
+        </p>
+        <p>
+          The academic pace was intense, taught by visiting professors from <strong>Spain, France, Italy, and Albania</strong>. 
+          I studied a wide range of topics including:
+        </p>
+        <ul>
+          <li><strong>Operations Research</strong></li>
+          <li><strong>Advanced Machine Learning</strong></li>
+          <li><strong>Computer Vision</strong></li>
+          <li><strong>Sustainability and Circular Economy</strong></li>
+        </ul>
+        <p>
+          This semester was both challenging and deeply rewarding, expanding my technical expertise and global outlook.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Part 3: Université de Technologie de Compiègne -->
+  <section class="about">
+    <h2>Part 3: Université de Technologie de Compiègne 🇫🇷</h2>
+    <div class="about-content" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+      <div style="flex: 0 0 250px; display: flex; justify-content: center;">
+        <img src="/kc-portfolio/MasterPage/utc.jpg" alt="Université de Technologie de Compiègne"
+             style="width: 220px; height: 220px; object-fit: cover; border-radius: 50%; box-shadow: 0 0 10px rgba(0,0,0,0.2);" />
+      </div>
+      <div style="flex: 1; min-width: 280px;">
+        <p>
+          My upcoming semester will take place at the <strong>Université de Technologie de Compiègne</strong>, France.
+        </p>
+        <p>
+          Although I haven’t started yet, I look forward to diving into the next phase of my academic journey, 
+          building upon the knowledge and skills gained so far.
+        </p>
+        <p>
+          This final semester will mark the culmination of my <strong>EMSSE</strong> experience, 
+          and I’m excited about the opportunities for further research, collaboration, and innovation.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <footer>
+    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
+    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.remove("show");
+    }
+
+    // ✅ Update home path to GitHub Pages root
+    function goHome() {
+      window.location.href = "/kc-portfolio/index.html";
+    }
+  </script>
+</body>
+</html>
