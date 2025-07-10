@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KC Portfolio</title>
+  <link rel="stylesheet" href="kc-portfolio/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  
+</head>
+<body class="fade">
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo" onclick="goHome()">KC</div>
+  </header>
 
+  <!-- Sidebar Navigation -->
+  <nav id="menu" class="sidebar">
+    <ul>
+      <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
+      <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
+      <li><a href="/kc-portfolio/ProjectPage/project.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="/kc-portfolio/JobPage/job.html" onclick="closeMenu()">Job Search</a></li>
+      <li><a href="/kc-portfolio/ArticlePage/article.html" onclick="closeMenu()">Latest Highlights</a></li>
+      <li><a href="/kc-portfolio/AchievementPage/achievement.html" onclick="closeMenu()">Recent Achievements</a></li>
+      <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+  
+  <main onclick="closeMenu()">
+    <section class="hero">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Explore my academic journey, projects, and goals.</p>
+    </section>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="Photo.png" alt="My Photo" />
+        <p>
+          <i>Hej, hola, përshëndetje, ciao, marhaba, hello, salut!</i>
+
+          <br><br>
+          I’m Kinda Chamma, currently enrolled in the Erasmus Mundus master’s program EMSSE, with a focus on Advanced Machine Learning and Optimization for Sustainable Systems. This semester, I’m continuing my academic journey at the Université de Technologie de Compiègne (UTC).
+          
+          This space is a reflection of my education, professional experiences, and ongoing growth — and, as you can probably tell, of my passion for discovering new cultures and languages.
+        </p>
+      </div>
+    </section>
+
+  <section class="projects">
+    <h2>Current Activities</h2>
+    <ul>
+      <li>📄 Research</li>
+      <li>🤖 Exploring AI tools</li>
+      <li>💻 IBM Mainframes Certification Course</li>
+    </ul>
+  </section>
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
+    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.remove("show");
+    }
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
