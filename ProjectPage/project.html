@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | KC Portfolio</title>
+  <link rel="stylesheet" href="/kc-portfolio/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="fade">
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="logo" onclick="goHome()">KC</div>
+  </header>
+
+  <nav id="menu" class="sidebar">
+    <ul>
+      <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
+      <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
+      <li><a href="/kc-portfolio/ProjectPage/project.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="/kc-portfolio/JobPage/job.html" onclick="closeMenu()">Job Search</a></li>
+      <li><a href="/kc-portfolio/ArticlePage/article.html" onclick="closeMenu()">Latest Highlights</a></li>
+      <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main onclick="closeMenu()">
+    <section class="hero">
+      <h1>Project Highlights</h1>
+      <p>Exploring sustainability, data science, and automation.</p>
+    </section>
+
+    <section class="about">
+      <h2>1. Sustainability: Life Cycle Assessment</h2>
+      <p>
+        I led a full life cycle assessment (LCA) study on cotton shirts, analyzing the environmental impacts within the fast fashion sector. We found that integrating 30% recycled cotton reduced environmental costs by around 38%, underscoring the value of even partial material reuse.
+      </p>
+      <p>
+        This project highlighted the urgent need for transitioning from a linear to a circular economy—preserving value across the supply chain, especially in fashion where peer pressure and media drive high consumption.
+      </p>
+      <p><strong>Tools:</strong> CCal, Excel (LCC modeling)</p>
+    </section>
+
+    <section class="about">
+      <h2>2. Machine Learning: Predicting Social Media Engagement</h2>
+      <p>
+        I addressed a regression task involving Facebook metrics (500 samples, 13 features) to predict post engagement (likes + comments + shares). ML algorithms such as Ridge, Lasso, SVR, and Random Forest were tested, with Ridge Regression proving most effective based on MAE.
+      </p>
+      <p>
+        I compared results with neural networks and universal approximators, validating the hypothesis that ML outperforms DL on small datasets.
+      </p>
+      <p><strong>Tools:</strong> Python | <strong>Libraries:</strong> NumPy, Scikit-learn, TensorFlow, Keras</p>
+    </section>
+
+    <section class="about">
+      <h2>3. Industrial Automation</h2>
+      <h3>a) Railway Maintenance Scheduling</h3>
+      <p>
+        I modeled the depot maintenance process for trains (inspection, repair, cleaning, refueling) as a flow shop problem. Both MILP and NEH heuristics were implemented to minimize tardiness under precedence constraints. While MILP yielded optimal results, NEH proved far more efficient.
+      </p>
+      <p><strong>Tools:</strong> MATLAB, Python</p>
+
+      <h3>b) Sustainable Refrigerated Warehouse</h3>
+      <p>
+        With a colleague, I designed a model for an automated refrigerated warehouse aimed at reducing energy use and carbon emissions. We modeled the system using ODEs, applied PID and relay controllers, and analyzed metrics such as renewable energy use and battery health.
+      </p>
+      <p><strong>Tools:</strong> MATLAB, Simulink</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
+    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.remove("show");
+    }
+
+    function goHome() {
+      window.location.href = "/kc-portfolio/index.html";
+    }
+  </script>
+</body>
+</html>
