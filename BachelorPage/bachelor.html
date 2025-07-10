@@ -4,20 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bachelor Journey | KC Portfolio</title>
+  
+  <!-- ✅ Correct path for CSS -->
   <link rel="stylesheet" href="/kc-portfolio/main.css" />
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body class="fade">
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <!-- ✅ Go home to GitHub Pages root -->
     <div class="logo" onclick="goHome()">KC</div>
   </header>
 
-  <!-- Sidebar Navigation -->
+  <!-- ✅ Sidebar Navigation -->
   <nav id="menu" class="sidebar">
     <ul>
       <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
@@ -38,9 +40,10 @@
     <section class="about">
       <h2>Part 1: Avignon University</h2>
       <div class="about-content">
-        <img src="avignon-photo.jpg" alt="Avignon University" />
+        <!-- ✅ Add folder prefix if images are inside BachelorPage -->
+        <img src="/kc-portfolio/BachelorPage/avignon-photo.jpg" alt="Avignon University" />
         <p>
-          I began my Bachelor studies at Avignon University, where I was introduced to foundational concepts in computer science and mathematics. The environment fostered my curiosity in algorithmic thinking and gave me a solid grounding in programming and system design.
+          I began my Bachelor studies at Avignon University, where I was introduced to foundational concepts in computer science and mathematics...
         </p>
       </div>
     </section>
@@ -48,9 +51,9 @@
     <section class="about">
       <h2>Part 2: Linnaeus University</h2>
       <div class="about-content">
-        <img src="linnaeus-photo.jpg" alt="Linnaeus University" />
+        <img src="/kc-portfolio/BachelorPage/linnaeus-photo.jpg" alt="Linnaeus University" />
         <p>
-          Later, I had the opportunity to study at Linnaeus University in Sweden. Here, I deepened my understanding of data structures, machine learning basics, and human-centered computing. The international exposure enriched my academic and cultural experience significantly.
+          Later, I had the opportunity to study at Linnaeus University in Sweden...
         </p>
       </div>
     </section>
@@ -74,10 +77,10 @@
       menu.classList.remove("show");
     }
 
+    // ✅ Update home path to GitHub Pages root
     function goHome() {
-      window.location.href = "index.html";
+      window.location.href = "/kc-portfolio/index.html";
     }
   </script>
 </body>
 </html>
-
