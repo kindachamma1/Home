@@ -5,227 +5,209 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KC Portfolio</title>
   <link rel="stylesheet" href="main.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <style>
-    /* INTRO OVERLAY STYLES */
-    #intro {
-      position: fixed;
-      inset: 0;
-      background-color: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 9999;
-      transition: opacity 1s ease;
-      color: #e0e0e0;
-      font-family: 'Segoe UI', sans-serif;
-      overflow: hidden;
-    }
-
-    #quote {
-      font-size: 1.8rem;
-      text-align: center;
-      max-width: 700px;
-      color: #e0e0e0;
-      margin-bottom: 2rem;
-      padding: 0 1rem;
-    }
-
-    #enterBtn {
-      padding: 12px 28px;
-      font-size: 1.1rem;
-      background-color: #03dac5;
-      color: #111;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      margin-bottom: 1rem;
-      font-weight: bold;
-    }
-
-    #enterBtn:hover {
-      background-color: #00bfa0;
-    }
-
-    .arrow {
-      font-size: 2rem;
-      animation: bounce 1.5s infinite;
-      color: #03dac5;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(10px); }
-    }
-
-    #mainContent {
-      display: none;
-    }
-
-    #bgCanvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-  </style>
 </head>
 
 <body class="fade">
-
-  <!-- Intro Overlay -->
-  <div id="intro">
-    <canvas id="bgCanvas"></canvas>
-    <div id="quote">
-      “Data is the new oil.” ~ Clive Humby
+  <!-- INTRO OVERLAY -->
+  <div id="intro" class="intro-overlay">
+    <canvas id="backgroundCanvas"></canvas>
+    <div class="intro-content">
+      <div class="quote">“The world is a book, and those who do not travel read only one page.”</div>
+      <p class="subtext">
+        Welcome! I’m <strong>Kinda Chamma</strong>, an EMSSE master’s student exploring AI and sustainability across borders.
+      </p>
+      <button id="enterButton">🌟 Discover My Portfolio</button>
     </div>
-    <button id="enterBtn">🌍 Discover My Portfolio</button>
-    <div class="arrow">↓</div>
   </div>
 
-  <!-- Main Content -->
-  <div id="mainContent">
-    <header>
-      <div class="menu-icon" onclick="toggleMenu()">☰</div>
-      <div class="logo" onclick="goHome()">KC</div>
-    </header>
+  <!-- HEADER -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <a class="logo" href="index.html">KC</a>
+  </header>
 
-    <nav id="menu" class="sidebar">
+  <!-- SIDEBAR -->
+  <nav id="menu" class="sidebar">
+    <ul>
+      <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
+      <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
+      <li><a href="/kc-portfolio/ProjectPage/project.html" onclick="closeMenu()">Projects</a></li>
+      <li><a href="/kc-portfolio/JobPage/job.html" onclick="closeMenu()">Job Search</a></li>
+      <li><a href="/kc-portfolio/ArticlePage/article.html" onclick="closeMenu()">Latest Highlights</a></li>
+      <li><a href="/kc-portfolio/AchievementPage/achievement.html" onclick="closeMenu()">Recent Achievements</a></li>
+      <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+  <main onclick="closeMenu()">
+    <section class="hero">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Explore my academic journey, projects, and goals.</p>
+    </section>
+
+    <section class="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="Photo.png" alt="My Photo" />
+        <p>
+          <i>Hej, hola, përshëndetje, ciao, marhaba, hello, salut!</i><br><br>
+          I’m Kinda Chamma, currently enrolled in the Erasmus Mundus master’s program EMSSE, with a focus on Advanced Machine Learning and Optimization for Sustainable Systems. This semester, I’m continuing my academic journey at the Université de Technologie de Compiègne (UTC).<br><br>
+          This space is a reflection of my education, professional experiences, and ongoing growth — and, as you can probably tell, of my passion for discovering new cultures and languages.
+        </p>
+      </div>
+    </section>
+
+    <section class="projects">
+      <h2>Current Activities</h2>
       <ul>
-        <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
-        <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
-        <li><a href="/kc-portfolio/ProjectPage/project.html" onclick="closeMenu()">Projects</a></li>
-        <li><a href="/kc-portfolio/JobPage/job.html" onclick="closeMenu()">Job Search</a></li>
-        <li><a href="/kc-portfolio/ArticlePage/article.html" onclick="closeMenu()">Latest Highlights</a></li>
-        <li><a href="/kc-portfolio/AchievementPage/achievement.html" onclick="closeMenu()">Recent Achievements</a></li>
-        <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
+        <li>📄 Research</li>
+        <li>🤖 Exploring AI tools</li>
+        <li>💻 IBM Mainframes Certification Course</li>
       </ul>
-    </nav>
+    </section>
+  </main>
 
-    <main onclick="closeMenu()">
-      <section class="hero">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Explore my academic journey, projects, and goals.</p>
-      </section>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
+    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </footer>
 
-      <section class="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-          <img src="Photo.png" alt="My Photo" />
-          <p>
-            <i>Hej, hola, përshëndetje, ciao, marhaba, hello, salut!</i>
-            <br><br>
-            I’m Kinda Chamma, currently enrolled in the Erasmus Mundus master’s program EMSSE, with a focus on Advanced Machine Learning and Optimization for Sustainable Systems. This semester, I’m continuing my academic journey at the Université de Technologie de Compiègne (UTC).
-            This space is a reflection of my education, professional experiences, and ongoing growth — and, as you can probably tell, of my passion for discovering new cultures and languages.
-          </p>
-        </div>
-      </section>
-
-      <section class="projects">
-        <h2>Current Activities</h2>
-        <ul>
-          <li>📄 Research</li>
-          <li>🤖 Exploring AI tools</li>
-          <li>💻 IBM Mainframes Certification Course</li>
-        </ul>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
-      <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </footer>
-  </div>
-
+  <!-- SCRIPTS -->
   <script>
+    // Sidebar toggle
     function toggleMenu() {
-      document.getElementById("menu").classList.toggle("show");
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
     }
 
     function closeMenu() {
-      document.getElementById("menu").classList.remove("show");
+      const menu = document.getElementById("menu");
+      menu.classList.remove("show");
     }
 
-    function goHome() {
-      window.location.href = "index.html";
-    }
-
-    // Intro fade-out and reveal
-    const enterBtn = document.getElementById("enterBtn");
-    const intro = document.getElementById("intro");
-    const mainContent = document.getElementById("mainContent");
-
-    enterBtn.addEventListener("click", () => {
-      intro.style.opacity = "0";
-      setTimeout(() => {
-        intro.style.display = "none";
-        mainContent.style.display = "block";
-        document.body.style.overflow = "auto";
-      }, 1000);
+    // Hide intro screen on button click
+    document.addEventListener('DOMContentLoaded', () => {
+      const intro = document.getElementById('intro');
+      const button = document.getElementById('enterButton');
+      button.addEventListener('click', () => {
+        intro.style.opacity = 0;
+        setTimeout(() => {
+          intro.style.display = 'none';
+        }, 800);
+      });
     });
 
-    // Canvas animation (neuron-like network)
-    const canvas = document.getElementById("bgCanvas");
+    // Simple background animation for canvas
+    const canvas = document.getElementById("backgroundCanvas");
     const ctx = canvas.getContext("2d");
-
     let particles = [];
 
-    const resizeCanvas = () => {
+    function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-    };
+    }
 
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
-    for (let i = 0; i < 120; i++) {
+    for (let i = 0; i < 60; i++) {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        radius: 1 + Math.random() * 2
+        r: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.6,
+        dy: (Math.random() - 0.5) * 0.6
       });
     }
 
-    function draw() {
+    function animateParticles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((p, i) => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
+      for (let p of particles) {
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fillStyle = "#03dac5";
         ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
 
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-          if (dist < 100) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = "rgba(3, 218, 197, 0.1)";
-            ctx.stroke();
-          }
-        }
-      });
-
-      requestAnimationFrame(draw);
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      }
+      requestAnimationFrame(animateParticles);
     }
 
-    draw();
+    animateParticles();
   </script>
+
+  <style>
+    /* INTRO OVERLAY */
+    .intro-overlay {
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #111;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: opacity 0.8s ease;
+    }
+
+    #backgroundCanvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .intro-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 700px;
+      padding: 2rem;
+    }
+
+    .intro-content .quote {
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .intro-content .subtext {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    #enterButton {
+      background-color: #03dac5;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: #111;
+      font-weight: bold;
+    }
+
+    #enterButton:hover {
+      background-color: #00bfa5;
+    }
+  </style>
 </body>
 </html>
