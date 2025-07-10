@@ -3,107 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>KC Portfolio</title>
-  <link rel="stylesheet" href="main.css" />
+  <title>Welcome – KC Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #e0e0e0;
+    }
+
+    .intro-overlay {
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #networkCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .intro-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 700px;
+      padding: 2rem;
+    }
+
+    .quote {
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .subtext {
+      font-size: 1.1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    #enterButton {
+      background-color: #03dac5;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.3s;
+      color: #111;
+      font-weight: bold;
+    }
+
+    #enterButton:hover {
+      background-color: #00bfa5;
+    }
+  </style>
 </head>
 
-<body class="fade">
-  <!-- INTRO OVERLAY -->
-  <div id="intro" class="intro-overlay">
+<body>
+  <div class="intro-overlay">
     <canvas id="networkCanvas"></canvas>
     <div class="intro-content">
-      <div class="quote">“Data is the new oil” ~ Clive Humby</div>
+      <div class="quote">
+        “The world is a book, and those who do not travel read only one page.”
+      </div>
       <p class="subtext">
         Welcome! I’m <strong>Kinda Chamma</strong>, an EMSSE master’s student exploring AI and sustainability across borders.
       </p>
-      <button id="enterButton">🌟 Discover My Portfolio</button>
+      <a href="index.html">
+        <button id="enterButton">🌟 Discover My Portfolio</button>
+      </a>
     </div>
   </div>
 
-  <!-- HEADER -->
-  <header>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <a class="logo" href="index.html">KC</a>
-  </header>
-
-  <!-- SIDEBAR -->
-  <nav id="menu" class="sidebar">
-    <ul>
-      <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
-      <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
-      <li><a href="/kc-portfolio/ProjectPage/project.html" onclick="closeMenu()">Projects</a></li>
-      <li><a href="/kc-portfolio/JobPage/job.html" onclick="closeMenu()">Job Search</a></li>
-      <li><a href="/kc-portfolio/ArticlePage/article.html" onclick="closeMenu()">Latest Highlights</a></li>
-      <li><a href="/kc-portfolio/AchievementPage/achievement.html" onclick="closeMenu()">Recent Achievements</a></li>
-      <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- MAIN -->
-  <main onclick="closeMenu()">
-    <section class="hero">
-      <h1>Welcome to My Portfolio</h1>
-      <p>Explore my academic journey, projects, and goals.</p>
-    </section>
-
-    <section class="about">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <img src="Photo.png" alt="My Photo" />
-        <p>
-          <i>Hej, hola, përshëndetje, ciao, marhaba, hello, salut!</i><br><br>
-          I’m Kinda Chamma, currently enrolled in the Erasmus Mundus master’s program EMSSE, with a focus on Advanced Machine Learning and Optimization for Sustainable Systems. This semester, I’m continuing my academic journey at the Université de Technologie de Compiègne (UTC).<br><br>
-          This space is a reflection of my education, professional experiences, and ongoing growth — and, as you can probably tell, of my passion for discovering new cultures and languages.
-        </p>
-      </div>
-    </section>
-
-    <section class="projects">
-      <h2>Current Activities</h2>
-      <ul>
-        <li>📄 Research</li>
-        <li>🤖 Exploring AI tools</li>
-        <li>💻 IBM Mainframes Certification Course</li>
-      </ul>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
-    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
-      <i class="fab fa-linkedin"></i>
-    </a>
-  </footer>
-
-  <!-- JS -->
   <script>
-    // Sidebar toggle
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
-    }
-
-    function closeMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.remove("show");
-    }
-
-    // Hide intro on button click
-    document.addEventListener('DOMContentLoaded', () => {
-      const intro = document.getElementById('intro');
-      const button = document.getElementById('enterButton');
-      button.addEventListener('click', () => {
-        intro.style.opacity = 0;
-        setTimeout(() => {
-          intro.style.display = 'none';
-        }, 800);
-      });
-    });
-
-    // Neural Network Animation
     const canvas = document.getElementById("networkCanvas");
     const ctx = canvas.getContext("2d");
     let nodes = [];
@@ -121,8 +119,8 @@
       nodes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 1,
-        vy: (Math.random() - 0.5) * 1
+        vx: (Math.random() - 0.5),
+        vy: (Math.random() - 0.5)
       });
     }
 
@@ -161,70 +159,5 @@
 
     animateNetwork();
   </script>
-
-  <!-- STYLES -->
-  <style>
-    .intro-overlay {
-      position: fixed;
-      z-index: 2000;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #111;
-      color: #e0e0e0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      transition: opacity 0.8s ease;
-    }
-
-    #networkCanvas {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-    }
-
-    .intro-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      max-width: 700px;
-      padding: 2rem;
-    }
-
-    .intro-content .quote {
-      font-size: 2rem;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      margin-bottom: 1.5rem;
-      color: #fff;
-    }
-
-    .intro-content .subtext {
-      font-size: 1.1rem;
-      color: #ccc;
-      margin-bottom: 2rem;
-    }
-
-    #enterButton {
-      background-color: #03dac5;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: background 0.3s;
-      color: #111;
-      font-weight: bold;
-    }
-
-    #enterButton:hover {
-      background-color: #00bfa5;
-    }
-  </style>
 </body>
 </html>
