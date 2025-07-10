@@ -6,97 +6,226 @@
   <title>KC Portfolio</title>
   <link rel="stylesheet" href="main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  <section class="h-screen flex flex-col items-center justify-center text-center px-6 bg-white">
-  <div class="text-3xl md:text-5xl font-semibold animate-fadeInUp mb-6">
-    “The world is a book, and those who do not travel read only one page.”  
-  </div>
-  <p class="text-lg md:text-xl text-gray-600 mb-10 animate-fadeInUp delay-100">
-    Welcome! I’m <strong>Kinda Chamma</strong>, an EMSSE master’s student exploring AI and sustainability across borders.
-  </p>
-  <button onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });"
-    class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg shadow-lg hover:bg-blue-700 transition duration-300 animate-fadeInUp delay-200">
-    🌟 Discover My Portfolio
-  </button>
-</section>
-  
+  <style>
+    /* INTRO OVERLAY STYLES */
+    #intro {
+      position: fixed;
+      inset: 0;
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      transition: opacity 1s ease;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    #quote {
+      font-size: 1.8rem;
+      text-align: center;
+      max-width: 700px;
+      color: #e0e0e0;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+
+    #enterBtn {
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      background-color: #03dac5;
+      color: #111;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    #enterBtn:hover {
+      background-color: #00bfa0;
+    }
+
+    .arrow {
+      font-size: 2rem;
+      animation: bounce 1.5s infinite;
+      color: #03dac5;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+
+    #mainContent {
+      display: none;
+    }
+
+    #bgCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  </style>
 </head>
+
 <body class="fade">
-  <header>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <div class="logo" onclick="goHome()">KC</div>
-  </header>
 
-  <!-- Sidebar Navigation -->
-  <nav id="menu" class="sidebar">
-    <ul>
-      <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
-      <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
-      <li><a href="/kc-portfolio/ProjectPage/project.html" onclick="closeMenu()">Projects</a></li>
-      <li><a href="/kc-portfolio/JobPage/job.html" onclick="closeMenu()">Job Search</a></li>
-      <li><a href="/kc-portfolio/ArticlePage/article.html" onclick="closeMenu()">Latest Highlights</a></li>
-      <li><a href="/kc-portfolio/AchievementPage/achievement.html" onclick="closeMenu()">Recent Achievements</a></li>
-      <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <main onclick="closeMenu()">
-    <section class="hero">
-      <h1>Welcome to My Portfolio</h1>
-      <p>Explore my academic journey, projects, and goals.</p>
-    </section>
+  <!-- Intro Overlay -->
+  <div id="intro">
+    <canvas id="bgCanvas"></canvas>
+    <div id="quote">
+      “Data is the new oil.” ~ Clive Humby
+    </div>
+    <button id="enterBtn">🌍 Discover My Portfolio</button>
+    <div class="arrow">↓</div>
+  </div>
 
-    <section class="about">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <img src="Photo.png" alt="My Photo" />
-        <p>
-          <i>Hej, hola, përshëndetje, ciao, marhaba, hello, salut!</i>
+  <!-- Main Content -->
+  <div id="mainContent">
+    <header>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <div class="logo" onclick="goHome()">KC</div>
+    </header>
 
-          <br><br>
-          I’m Kinda Chamma, currently enrolled in the Erasmus Mundus master’s program EMSSE, with a focus on Advanced Machine Learning and Optimization for Sustainable Systems. This semester, I’m continuing my academic journey at the Université de Technologie de Compiègne (UTC).
-          
-          This space is a reflection of my education, professional experiences, and ongoing growth — and, as you can probably tell, of my passion for discovering new cultures and languages.
-        </p>
-      </div>
-    </section>
+    <nav id="menu" class="sidebar">
+      <ul>
+        <li><a href="/kc-portfolio/BachelorPage/bachelor.html" onclick="closeMenu()">Bachelor</a></li>
+        <li><a href="/kc-portfolio/MasterPage/master.html" onclick="closeMenu()">Masters</a></li>
+        <li><a href="/kc-portfolio/ProjectPage/project.html" onclick="closeMenu()">Projects</a></li>
+        <li><a href="/kc-portfolio/JobPage/job.html" onclick="closeMenu()">Job Search</a></li>
+        <li><a href="/kc-portfolio/ArticlePage/article.html" onclick="closeMenu()">Latest Highlights</a></li>
+        <li><a href="/kc-portfolio/AchievementPage/achievement.html" onclick="closeMenu()">Recent Achievements</a></li>
+        <li><a href="/kc-portfolio/ContactPage/contact.html" onclick="closeMenu()">Contact</a></li>
+      </ul>
+    </nav>
 
-  <section class="projects">
-    <h2>Current Activities</h2>
-    <ul>
-      <li>📄 Research</li>
-      <li>🤖 Exploring AI tools</li>
-      <li>💻 IBM Mainframes Certification Course</li>
-    </ul>
-  </section>
-    
-  </main>
+    <main onclick="closeMenu()">
+      <section class="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Explore my academic journey, projects, and goals.</p>
+      </section>
 
-  <footer>
-    <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
-    <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
-      <i class="fab fa-linkedin"></i>
-    </a>
-  </footer>
+      <section class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <img src="Photo.png" alt="My Photo" />
+          <p>
+            <i>Hej, hola, përshëndetje, ciao, marhaba, hello, salut!</i>
+            <br><br>
+            I’m Kinda Chamma, currently enrolled in the Erasmus Mundus master’s program EMSSE, with a focus on Advanced Machine Learning and Optimization for Sustainable Systems. This semester, I’m continuing my academic journey at the Université de Technologie de Compiègne (UTC).
+            This space is a reflection of my education, professional experiences, and ongoing growth — and, as you can probably tell, of my passion for discovering new cultures and languages.
+          </p>
+        </div>
+      </section>
+
+      <section class="projects">
+        <h2>Current Activities</h2>
+        <ul>
+          <li>📄 Research</li>
+          <li>🤖 Exploring AI tools</li>
+          <li>💻 IBM Mainframes Certification Course</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 KC Portfolio. All rights reserved.</p>
+      <a href="https://www.linkedin.com/in/kinda-chamma" target="_blank" class="linkedin" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </footer>
+  </div>
 
   <script>
     function toggleMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.toggle("show");
+      document.getElementById("menu").classList.toggle("show");
     }
 
     function closeMenu() {
-      const menu = document.getElementById("menu");
-      menu.classList.remove("show");
+      document.getElementById("menu").classList.remove("show");
     }
 
     function goHome() {
       window.location.href = "index.html";
     }
+
+    // Intro fade-out and reveal
+    const enterBtn = document.getElementById("enterBtn");
+    const intro = document.getElementById("intro");
+    const mainContent = document.getElementById("mainContent");
+
+    enterBtn.addEventListener("click", () => {
+      intro.style.opacity = "0";
+      setTimeout(() => {
+        intro.style.display = "none";
+        mainContent.style.display = "block";
+        document.body.style.overflow = "auto";
+      }, 1000);
+    });
+
+    // Canvas animation (neuron-like network)
+    const canvas = document.getElementById("bgCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let particles = [];
+
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 120; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: 1 + Math.random() * 2
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach((p, i) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "#03dac5";
+        ctx.fill();
+
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+          if (dist < 100) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = "rgba(3, 218, 197, 0.1)";
+            ctx.stroke();
+          }
+        }
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
   </script>
 </body>
 </html>
