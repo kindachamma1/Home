@@ -6,89 +6,12 @@
   <title>KC Portfolio</title>
   <link rel="stylesheet" href="/kc-portfolio/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <style>
-    /* Card chart layout for current activities */
-    .projects {
-      background-color: #f9f9f9;
-      padding: 2rem;
-      border-radius: 10px;
-      margin: 2rem 0;
-    }
-
-    .project-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-
-    .project-card {
-      background: white;
-      border-left: 5px solid #0077b6;
-      padding: 1.2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      flex: 1 1 260px;
-      max-width: 300px;
-      transition: transform 0.2s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .project-card h3 {
-      margin-top: 0;
-    }
-
-    /* My Path section */
-    .mypath {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 2rem;
-      margin: 2rem 0;
-    }
-
-    .mypath img {
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .mypath-text {
-      flex: 1;
-    }
-
-    /* Skills section */
-    .skills {
-      background-color: #eef6f9;
-      padding: 2rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-    }
-
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      list-style: none;
-      padding: 0;
-      margin-top: 1rem;
-    }
-
-    .skills-list li {
-      background: #fff;
-      padding: 1rem;
-      border-left: 4px solid #00b4d8;
-      border-radius: 8px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.1);
-    }
-  </style>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  
 </head>
-
 <body class="fade">
   <header>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
@@ -119,57 +42,25 @@
       <div class="about-content">
         <img src="/kc-portfolio/Photo.png" alt="My Photo" />
         <p>
-          <i>Hej, hola, përshëndetje, ciao, marhaba, hello, salut!</i><br><br>
-          I’m Kinda Chamma, currently enrolled in the Erasmus Mundus master’s program EMSSE, with a focus on Advanced Machine Learning and Optimization for Sustainable Systems. This semester, I’m continuing my academic journey at the Université de Technologie de Compiègne (UTC).
+          <i>Hej, hola, përshëndetje, ciao, marhaba, hello, salut!</i>
+
           <br><br>
+          I’m Kinda Chamma, currently enrolled in the Erasmus Mundus master’s program EMSSE, with a focus on Advanced Machine Learning and Optimization for Sustainable Systems. This semester, I’m continuing my academic journey at the Université de Technologie de Compiègne (UTC).
+          
           This space is a reflection of my education, professional experiences, and ongoing growth — and, as you can probably tell, of my passion for discovering new cultures and languages.
         </p>
       </div>
     </section>
 
-    <!-- NEW: My Path -->
-    <section class="mypath">
-      <img src="/kc-portfolio/mypath-image.png" alt="My Path">
-      <div class="mypath-text">
-        <h2>My Path</h2>
-        <p>
-          My journey has taken me through diverse cultures, academic disciplines, and personal discoveries. From Lebanon to Europe, and from software engineering to sustainable systems, every step has been driven by curiosity and a desire to grow.
-          <br><br>
-          This path continues to evolve — shaped by opportunities, people, and the challenges I embrace along the way.
-        </p>
-      </div>
-    </section>
-
-    <!-- MODIFIED: Current Activities -->
-    <section class="projects">
-      <h2>Current Activities</h2>
-      <div class="project-cards">
-        <div class="project-card">
-          <h3>📄 Research</h3>
-          <p>Working on sustainable system optimization using ML & AI.</p>
-        </div>
-        <div class="project-card">
-          <h3>🤖 Exploring AI Tools</h3>
-          <p>Prototyping with Hugging Face, OpenAI, and automation platforms.</p>
-        </div>
-        <div class="project-card">
-          <h3>💻 IBM Mainframes</h3>
-          <p>Completing certification and hands-on training on legacy systems.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- NEW: Skills -->
-    <section class="skills">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>Python, JavaScript, Bash</li>
-        <li>Machine Learning (Scikit-learn, TensorFlow)</li>
-        <li>Data Analytics & Visualization (Pandas, Power BI, Tableau)</li>
-        <li>Web Development (HTML, CSS, React)</li>
-        <li>Multilingual Communication & Team Collaboration</li>
-      </ul>
-    </section>
+  <section class="projects">
+    <h2>Current Activities</h2>
+    <ul>
+      <li>📄 Research</li>
+      <li>🤖 Exploring AI tools</li>
+      <li>💻 IBM Mainframes Certification Course</li>
+    </ul>
+  </section>
+    
   </main>
 
   <footer>
